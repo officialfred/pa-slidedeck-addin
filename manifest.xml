@@ -13,21 +13,10 @@
   <DisplayName DefaultValue="PA Slide Deck Generator"/>
   <Description DefaultValue="PowerPoint data-driven add-in."/>
 
-  <WebApplicationInfo>
-    <Id>c8e6ef39-1958-45be-8676-534a83405843</Id>
-    <Resource>api://c8e6ef39-1958-45be-8676-534a83405843</Resource>
-    <Scopes>
-      <Scope>Files.Read</Scope>
-      <Scope>Sites.Read.All</Scope>
-    </Scopes>
-  </WebApplicationInfo>
-
-  <!-- ✅ FIXED: GitHub Pages URLs -->
   <IconUrl DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://officedocs.microsoft.com"/>
 
-  <!-- ✅ FIXED -->
   <AppDomains>
     <AppDomain>https://officialfred.github.io</AppDomain>
   </AppDomains>
@@ -36,7 +25,6 @@
     <Host Name="Presentation"/>
   </Hosts>
 
-  <!-- ✅ FIXED -->
   <DefaultSettings>
     <SourceLocation DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/taskpane.html"/>
   </DefaultSettings>
@@ -48,12 +36,30 @@
 
     <Hosts>
       <Host xsi:type="Presentation">
+
+        <!-- ✅ WebApplicationInfo MUST BE HERE -->
+        <WebApplicationInfo>
+          <Id>c8e6ef39-1958-45be-8676-534a83405843</Id>
+          <Resource>api://c8e6ef39-1958-45be-8676-534a83405843</Resource>
+          <Scopes>
+            <Scope>Files.Read</Scope>
+            <Scope>Sites.Read.All</Scope>
+          </Scopes>
+        </WebApplicationInfo>
+
         <DesktopFormFactor>
+
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
 
           <FunctionFile resid="Commands.Url"/>
 
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <OfficeTab id="TabHome">
+
               <Group id="CommandsGroup">
                 <Label resid="CommandsGroup.Label"/>
 
@@ -67,6 +73,7 @@
                 </Control>
 
               </Group>
+
             </OfficeTab>
           </ExtensionPoint>
 
@@ -82,16 +89,19 @@
       </bt:Images>
 
       <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
         <bt:Url id="Commands.Url" DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/commands.html"/>
         <bt:Url id="Taskpane.Url" DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/taskpane.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="PA Tools"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Open Add-in"/>
       </bt:ShortStrings>
 
       <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Load data from Excel into PowerPoint."/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Open the PA Slide Deck Generator"/>
       </bt:LongStrings>
     </Resources>
