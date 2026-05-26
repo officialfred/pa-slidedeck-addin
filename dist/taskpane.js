@@ -2,14 +2,17 @@
 
 console.log("TASKPANE JS LOADED");
 
-Office.onReady((info) => {
-  if (info.host === Office.HostType.PowerPoint) {
-    document.getElementById("sideload-msg").style.display = "none";
-    document.getElementById("app-body").style.display = "block";
 
-    document.getElementById("run").onclick = runProcess;
-  }
+Office.onReady(() => {
+  console.log("Office ready fired");
+
+  document.getElementById("sideload-msg").style.display = "none";
+  document.getElementById("app-body").style.display = "block";
+
+  document.getElementById("run").onclick = runProcess;
 });
+``
+
 
 
 
