@@ -1,6 +1,6 @@
 /* global document, Office */
 
-
+console.log("TASKPANE JS LOADED");
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.PowerPoint) {
