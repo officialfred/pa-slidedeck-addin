@@ -108,7 +108,7 @@ async function getExcelMapping(fileId, rangeNames) {
 /* =========================
    REPLACE PLACEHOLDERS
 ========================= */
-async function replacePlaceholders(mapping: any) {
+async function replacePlaceholders(mapping) {
   await PowerPoint.run(async (context) => {
     const slides = context.presentation.slides;
     slides.load("items");
