@@ -1,10 +1,17 @@
 /* global document, Office */
 
+
 Office.onReady((info) => {
   if (info.host === Office.HostType.PowerPoint) {
+    // ✅ SHOW YOUR APP
+    document.getElementById("sideload-msg").style.display = "none";
+    document.getElementById("app-body").style.display = "block";
+
+    // ✅ WIRE BUTTON
     document.getElementById("run").onclick = runProcess;
   }
 });
+
 
 /* =========================
    GET FILE CONTEXT
@@ -23,7 +30,7 @@ async function getFileContext() {
 /* =========================
    FIND EXCEL FILES
 ========================= */
-async function getTargetExcelFiles(pptItemId: string) {
+async function getTargetExcelFiles(pptItemId) {
   const token = await OfficeRuntime.auth.getAccessToken();
 
   const itemRes = await fetch(
