@@ -1,3 +1,169 @@
-/*! For license information please see taskpane.js.LICENSE.txt */
-!function(){var e={98362:function(e,t,n){"use strict";e.exports=n.p+"assets/logo-filled.png"},58394:function(e,t,n){"use strict";e.exports=n.p+"1fda685b81e1123773f6.css"}},t={};function n(r){var o=t[r];if(void 0!==o)return o.exports;var a=t[r]={exports:{}};return e[r](a,a.exports,n),a.exports}n.m=e,n.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},function(){var e;n.g.importScripts&&(e=n.g.location+"");var t=n.g.document;if(!e&&t&&(t.currentScript&&"SCRIPT"===t.currentScript.tagName.toUpperCase()&&(e=t.currentScript.src),!e)){var r=t.getElementsByTagName("script");if(r.length)for(var o=r.length-1;o>-1&&(!e||!/^http(s?):/.test(e));)e=r[o--].src}if(!e)throw new Error("Automatic publicPath is not supported in this browser");e=e.replace(/^blob:/,"").replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),n.p=e}(),n.b="undefined"!=typeof document&&document.baseURI||self.location.href,function(){function e(t){return e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e(t)}function t(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),n.push.apply(n,r)}return n}function n(e){for(var n=1;n<arguments.length;n++){var o=null!=arguments[n]?arguments[n]:{};n%2?t(Object(o),!0).forEach(function(t){r(e,t,o[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(o)):t(Object(o)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(o,t))})}return e}function r(t,n,r){return(n=function(t){var n=function(t){if("object"!=e(t)||!t)return t;var n=t[Symbol.toPrimitive];if(void 0!==n){var r=n.call(t,"string");if("object"!=e(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(t)}(t);return"symbol"==e(n)?n:n+""}(n))in t?Object.defineProperty(t,n,{value:r,enumerable:!0,configurable:!0,writable:!0}):t[n]=r,t}function o(e,t){var n="undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(!n){if(Array.isArray(e)||(n=function(e,t){if(e){if("string"==typeof e)return a(e,t);var n={}.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?a(e,t):void 0}}(e))||t&&e&&"number"==typeof e.length){n&&(e=n);var r=0,o=function(){};return{s:o,n:function(){return r>=e.length?{done:!0}:{done:!1,value:e[r++]}},e:function(e){throw e},f:o}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var i,c=!0,u=!1;return{s:function(){n=n.call(e)},n:function(){var e=n.next();return c=e.done,e},e:function(e){u=!0,i=e},f:function(){try{c||null==n.return||n.return()}finally{if(u)throw i}}}}function a(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=Array(t);n<t;n++)r[n]=e[n];return r}function i(){var e,t,n="function"==typeof Symbol?Symbol:{},r=n.iterator||"@@iterator",o=n.toStringTag||"@@toStringTag";function a(n,r,o,a){var i=r&&r.prototype instanceof s?r:s,f=Object.create(i.prototype);return c(f,"_invoke",function(n,r,o){var a,i,c,s=0,f=o||[],l=!1,p={p:0,n:0,v:e,a:v,f:v.bind(e,4),d:function(t,n){return a=t,i=0,c=e,p.n=n,u}};function v(n,r){for(i=n,c=r,t=0;!l&&s&&!o&&t<f.length;t++){var o,a=f[t],v=p.p,h=a[2];n>3?(o=h===r)&&(c=a[(i=a[4])?5:(i=3,3)],a[4]=a[5]=e):a[0]<=v&&((o=n<2&&v<a[1])?(i=0,p.v=r,p.n=a[1]):v<h&&(o=n<3||a[0]>r||r>h)&&(a[4]=n,a[5]=r,p.n=h,i=0))}if(o||n>1)return u;throw l=!0,r}return function(o,f,h){if(s>1)throw TypeError("Generator is already running");for(l&&1===f&&v(f,h),i=f,c=h;(t=i<2?e:c)||!l;){a||(i?i<3?(i>1&&(p.n=-1),v(i,c)):p.n=c:p.v=c);try{if(s=2,a){if(i||(o="next"),t=a[o]){if(!(t=t.call(a,c)))throw TypeError("iterator result is not an object");if(!t.done)return t;c=t.value,i<2&&(i=0)}else 1===i&&(t=a.return)&&t.call(a),i<2&&(c=TypeError("The iterator does not provide a '"+o+"' method"),i=1);a=e}else if((t=(l=p.n<0)?c:n.call(r,p))!==u)break}catch(t){a=e,i=1,c=t}finally{s=1}}return{value:t,done:l}}}(n,o,a),!0),f}var u={};function s(){}function f(){}function l(){}t=Object.getPrototypeOf;var p=[][r]?t(t([][r]())):(c(t={},r,function(){return this}),t),v=l.prototype=s.prototype=Object.create(p);function h(e){return Object.setPrototypeOf?Object.setPrototypeOf(e,l):(e.__proto__=l,c(e,o,"GeneratorFunction")),e.prototype=Object.create(v),e}return f.prototype=l,c(v,"constructor",l),c(l,"constructor",f),f.displayName="GeneratorFunction",c(l,o,"GeneratorFunction"),c(v),c(v,o,"Generator"),c(v,r,function(){return this}),c(v,"toString",function(){return"[object Generator]"}),(i=function(){return{w:a,m:h}})()}function c(e,t,n,r){var o=Object.defineProperty;try{o({},"",{})}catch(e){o=0}c=function(e,t,n,r){function a(t,n){c(e,t,function(e){return this._invoke(t,n,e)})}t?o?o(e,t,{value:n,enumerable:!r,configurable:!r,writable:!r}):e[t]=n:(a("next",0),a("throw",1),a("return",2))},c(e,t,n,r)}function u(e,t,n,r,o,a,i){try{var c=e[a](i),u=c.value}catch(e){return void n(e)}c.done?t(u):Promise.resolve(u).then(r,o)}function s(e){return function(){var t=this,n=arguments;return new Promise(function(r,o){var a=e.apply(t,n);function i(e){u(a,r,o,i,c,"next",e)}function c(e){u(a,r,o,i,c,"throw",e)}i(void 0)})}}function f(){return l.apply(this,arguments)}function l(){return(l=s(i().m(function e(){var t,n,r;return i().w(function(e){for(;;)switch(e.n){case 0:return e.n=1,OfficeRuntime.auth.getAccessToken();case 1:return t=e.v,e.n=2,fetch("https://graph.microsoft.com/v1.0/me/drive/recent",{headers:{Authorization:"Bearer ".concat(t)}});case 2:return n=e.v,e.n=3,n.json();case 3:return r=e.v,e.a(2,r.value)}},e)}))).apply(this,arguments)}function p(e){return v.apply(this,arguments)}function v(){return(v=s(i().m(function e(t){var n,r,a,c,u,s,f,l,p,v,h,y;return i().w(function(e){for(;;)switch(e.p=e.n){case 0:return e.n=1,OfficeRuntime.auth.getAccessToken();case 1:return n=e.v,e.n=2,fetch("https://graph.microsoft.com/v1.0/me/drive/items/".concat(t),{headers:{Authorization:"Bearer ".concat(n)}});case 2:return r=e.v,e.n=3,r.json();case 3:return a=e.v,c=a.parentReference,e.n=4,fetch("https://graph.microsoft.com/v1.0/drives/".concat(c.driveId,"/items/").concat(c.id,"/children"),{headers:{Authorization:"Bearer ".concat(n)}});case 4:return u=e.v,e.n=5,u.json();case 5:s=e.v,f=null,l=null,p=o(s.value),e.p=6,p.s();case 7:if((v=p.n()).done){e.n=10;break}if((h=v.value).name&&h.name.endsWith(".xlsx")){e.n=8;break}return e.a(3,9);case 8:h.name.toLowerCase().startsWith("financial analysis")&&(f=h),h.name.toLowerCase().startsWith("engineering analysis")&&(l=h);case 9:e.n=7;break;case 10:e.n=12;break;case 11:e.p=11,y=e.v,p.e(y);case 12:return e.p=12,p.f(),e.f(12);case 13:if(f){e.n=14;break}throw new Error("Financial Analysis file not found");case 14:if(l){e.n=15;break}throw new Error("Engineering Analysis file not found");case 15:return e.a(2,{financialFile:f,engineeringFile:l})}},e,null,[[6,11,12,13]])}))).apply(this,arguments)}function h(e,t){return y.apply(this,arguments)}function y(){return(y=s(i().m(function e(t,n){var r,o,a;return i().w(function(e){for(;;)switch(e.n){case 0:return e.n=1,OfficeRuntime.auth.getAccessToken();case 1:return r=e.v,e.n=2,fetch("https://graph.microsoft.com/v1.0/me/drive/items/".concat(t,"/workbook/names('").concat(n,"')/range"),{headers:{Authorization:"Bearer ".concat(r)}});case 2:if((o=e.v).ok){e.n=3;break}throw new Error("Failed to read named range: ".concat(n));case 3:return e.n=4,o.json();case 4:return a=e.v,e.a(2,a.values[0][0])}},e)}))).apply(this,arguments)}function b(e,t){return m.apply(this,arguments)}function m(){return(m=s(i().m(function e(t,n){var r,a,c,u,s;return i().w(function(e){for(;;)switch(e.p=e.n){case 0:r={},a=o(n),e.p=1,a.s();case 2:if((c=a.n()).done){e.n=5;break}return u=c.value,e.n=3,h(t,u);case 3:r[u]=e.v;case 4:e.n=2;break;case 5:e.n=7;break;case 6:e.p=6,s=e.v,a.e(s);case 7:return e.p=7,a.f(),e.f(7);case 8:return e.a(2,r)}},e,null,[[1,6,7,8]])}))).apply(this,arguments)}function d(e){return g.apply(this,arguments)}function g(){return g=s(i().m(function e(t){return i().w(function(e){for(;;)switch(e.n){case 0:return e.n=1,PowerPoint.run(function(){var e=s(i().m(function e(n){var r,a,c,u,s,f,l,p,v,h,y,b,m;return i().w(function(e){for(;;)switch(e.p=e.n){case 0:return(r=n.presentation.slides).load("items"),e.n=1,n.sync();case 1:a=o(r.items),e.p=2,a.s();case 3:if((c=a.n()).done){e.n=13;break}return u=c.value,(s=u.shapes).load("items/textFrame/textRange/text"),e.n=4,n.sync();case 4:f=o(s.items),e.p=5,f.s();case 6:if((l=f.n()).done){e.n=9;break}if((p=l.value).textFrame){e.n=7;break}return e.a(3,8);case 7:for(h in v=p.textFrame.textRange.text,t)y="{{".concat(h,"}}"),v=v.replace(y,t[h]);p.textFrame.textRange.text=v;case 8:e.n=6;break;case 9:e.n=11;break;case 10:e.p=10,b=e.v,f.e(b);case 11:return e.p=11,f.f(),e.f(11);case 12:e.n=3;break;case 13:e.n=15;break;case 14:e.p=14,m=e.v,a.e(m);case 15:return e.p=15,a.f(),e.f(15);case 16:return e.n=17,n.sync();case 17:return e.a(2)}},e,null,[[5,10,11,12],[2,14,15,16]])}));return function(t){return e.apply(this,arguments)}}());case 1:return e.a(2)}},e)})),g.apply(this,arguments)}function w(){return O.apply(this,arguments)}function O(){return(O=s(i().m(function e(){var t,r,o,a,c,u,s,l,v;return i().w(function(e){for(;;)switch(e.p=e.n){case 0:return e.p=0,e.n=1,f();case 1:if(t=e.v,r=t.find(function(e){return e.name.endsWith(".pptx")})){e.n=2;break}throw new Error("PowerPoint file not found");case 2:return e.n=3,p(r.id);case 3:return o=e.v,a=o.financialFile,c=o.engineeringFile,e.n=4,b(a.id,["Revenue","Cost","Profit"]);case 4:return u=e.v,e.n=5,b(c.id,["ProjectLoad","Efficiency"]);case 5:return s=e.v,l=n(n({},u),s),e.n=6,d(l);case 6:e.n=8;break;case 7:e.p=7,v=e.v,console.error(v),alert(v.message);case 8:return e.a(2)}},e,null,[[0,7]])}))).apply(this,arguments)}Office.onReady(function(e){e.host===Office.HostType.PowerPoint&&(document.getElementById("run").onclick=w)})}(),function(){"use strict";new URL(n(58394),n.b),new URL(n(98362),n.b)}()}();
-//# sourceMappingURL=taskpane.js.map
+/* global document, Office */
+
+Office.onReady((info) => {
+  if (info.host === Office.HostType.PowerPoint) {
+    document.getElementById("run").onclick = runProcess;
+  }
+});
+
+/* =========================
+   GET FILE CONTEXT
+========================= */
+async function getFileContext() {
+  const token = await OfficeRuntime.auth.getAccessToken();
+
+  const res = await fetch("https://graph.microsoft.com/v1.0/me/drive/recent", {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+
+  const data = await res.json();
+  return data.value;
+}
+
+/* =========================
+   FIND EXCEL FILES
+========================= */
+async function getTargetExcelFiles(pptItemId: string) {
+  const token = await OfficeRuntime.auth.getAccessToken();
+
+  const itemRes = await fetch(
+    `https://graph.microsoft.com/v1.0/me/drive/items/${pptItemId}`,
+    { headers: { Authorization: `Bearer ${token}` } }
+  );
+
+  const item = await itemRes.json();
+  const parent = item.parentReference;
+
+  const filesRes = await fetch(
+    `https://graph.microsoft.com/v1.0/drives/${parent.driveId}/items/${parent.id}/children`,
+    {
+      headers: { Authorization: `Bearer ${token}` }
+    }
+  );
+
+  const files = await filesRes.json();
+
+  let financialFile = null;
+  let engineeringFile = null;
+
+  for (const f of files.value) {
+    if (!f.name || !f.name.endsWith(".xlsx")) continue;
+
+    if (f.name.toLowerCase().startsWith("financial analysis")) {
+      financialFile = f;
+    }
+
+    if (f.name.toLowerCase().startsWith("engineering analysis")) {
+      engineeringFile = f;
+    }
+  }
+
+  if (!financialFile) throw new Error("Financial Analysis file not found");
+  if (!engineeringFile) throw new Error("Engineering Analysis file not found");
+
+  return { financialFile, engineeringFile };
+}
+
+/* =========================
+   READ NAMED RANGE
+========================= */
+async function readNamedRange(fileId: string, name: string) {
+  const token = await OfficeRuntime.auth.getAccessToken();
+
+  const res = await fetch(
+    `https://graph.microsoft.com/v1.0/me/drive/items/${fileId}/workbook/names('${name}')/range`,
+    {
+      headers: { Authorization: `Bearer ${token}` }
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error(`Failed to read named range: ${name}`);
+  }
+
+  const data = await res.json();
+  return data.values[0][0];
+}
+
+/* =========================
+   GET MULTIPLE VALUES
+========================= */
+async function getExcelMapping(fileId: string, rangeNames: string[]) {
+  const mapping: any = {};
+
+  for (const name of rangeNames) {
+    mapping[name] = await readNamedRange(fileId, name);
+  }
+
+  return mapping;
+}
+
+/* =========================
+   REPLACE PLACEHOLDERS
+========================= */
+async function replacePlaceholders(mapping: any) {
+  await PowerPoint.run(async (context) => {
+    const slides = context.presentation.slides;
+    slides.load("items");
+
+    await context.sync();
+
+    for (const slide of slides.items) {
+      const shapes = slide.shapes;
+      shapes.load("items/textFrame/textRange/text");
+
+      await context.sync();
+
+      for (const shape of shapes.items) {
+        if (!shape.textFrame) continue;
+
+        let text = shape.textFrame.textRange.text;
+
+        for (const key in mapping) {
+          const placeholder = `{{${key}}}`;
+          text = text.replace(placeholder, mapping[key]);
+        }
+
+        shape.textFrame.textRange.text = text;
+      }
+    }
+
+    await context.sync();
+  });
+}
+
+/* =========================
+   MAIN FLOW
+========================= */
+async function runProcess() {
+  try {
+    const files = await getFileContext();
+
+    const ppt = files.find((f) => f.name.endsWith(".pptx"));
+    if (!ppt) throw new Error("PowerPoint file not found");
+
+    const { financialFile, engineeringFile } =
+      await getTargetExcelFiles(ppt.id);
+
+    const financialMapping = await getExcelMapping(
+      financialFile.id,
+      ["Revenue", "Cost", "Profit"]
+    );
+
+    const engineeringMapping = await getExcelMapping(
+      engineeringFile.id,
+      ["ProjectLoad", "Efficiency"]
+    );
+
+    const finalMapping = {
+      ...financialMapping,
+      ...engineeringMapping
+    };
+
+    await replacePlaceholders(finalMapping);
+
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+}
