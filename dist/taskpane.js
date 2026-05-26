@@ -1,16 +1,16 @@
 /* global document, Office */
 
 
+
 Office.onReady((info) => {
   if (info.host === Office.HostType.PowerPoint) {
-    // ✅ SHOW YOUR APP
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "block";
 
-    // ✅ WIRE BUTTON
     document.getElementById("run").onclick = runProcess;
   }
 });
+
 
 
 /* =========================
@@ -74,7 +74,7 @@ async function getTargetExcelFiles(pptItemId) {
 /* =========================
    READ NAMED RANGE
 ========================= */
-async function readNamedRange(fileId: string, name: string) {
+async function readNamedRange(fileId, name) {
   const token = await OfficeRuntime.auth.getAccessToken();
 
   const res = await fetch(
@@ -95,8 +95,8 @@ async function readNamedRange(fileId: string, name: string) {
 /* =========================
    GET MULTIPLE VALUES
 ========================= */
-async function getExcelMapping(fileId: string, rangeNames: string[]) {
-  const mapping: any = {};
+async function getExcelMapping(fileId, rangeNames) {
+  const mapping = {};
 
   for (const name of rangeNames) {
     mapping[name] = await readNamedRange(fileId, name);
