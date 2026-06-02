@@ -10,10 +10,13 @@
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
 
+
+
   <DisplayName DefaultValue="PA Slide Deck Generator"/>
   <Description DefaultValue="PowerPoint data tool."/>
 
   <IconUrl DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/assets/icon-80.png"/>
   <SupportUrl DefaultValue="https://officedocs.microsoft.com"/>
 
   <AppDomains>
@@ -30,27 +33,79 @@
 
   <Permissions>ReadWriteDocument</Permissions>
 
-  <!-- ✅ REQUIRED FOR COMMANDS + SSO -->
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
-                    xsi:type="VersionOverridesV1_1">
+                    xsi:type="VersionOverridesV1_0">
 
     <Hosts>
       <Host xsi:type="Presentation">
 
-        <!-- ✅ CORRECT LOCATION FOR SSO -->
-        <WebApplicationInfo>
-          <Id>c8e6ef39-1958-45be-8676-534a83405843</Id>
-          <Resource>api://officialfred.github.io/c8e6ef39-1958-45be-8676-534a83405843</Resource>
-          <Scopes>
-            <Scope>Files.Read</Scope>
-            <Scope>Sites.Read.All</Scope>
-          </Scopes>
-        </WebApplicationInfo>
-
         <DesktopFormFactor>
 
-          <FunctionFile resid="Commands.Url"/>
 
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <OfficeTab id="TabHome">
 
+              <Group id="MyGroup">
+                <Label resid="Group.Label"/>
+
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+
+                <Control xsi:type="Button" id="TaskpaneButton">
+                  <Label resid="Button.Label"/>
+
+                  <!-- ✅ REQUIRED -->
+                  <Supertip>
+                    <Title resid="Button.Label"/>
+                    <Description resid="Button.Tooltip"/>
+                  </Supertip>
+
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>MyTaskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+
+              </Group>
+
+            </OfficeTab>
+          </ExtensionPoint>
+
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/assets/icon-16.png"/>
+        <bt:Image id="Icon.32" DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/assets/icon-32.png"/>
+        <bt:Image id="Icon.80" DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/assets/icon-80.png"/>
+      </bt:Images>
+
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/taskpane.html"/>
+      </bt:Urls>
+
+      <bt:ShortStrings>
+        <bt:String id="Group.Label" DefaultValue="PA Tools"/>
+        <bt:String id="Button.Label" DefaultValue="Open Tool"/>
+      </bt:ShortStrings>
+
+      <bt:LongStrings>
+        <bt:String id="Button.Tooltip" DefaultValue="Open the add-in"/>
+      </bt:LongStrings>
+
+    </Resources>
+
+  </VersionOverrides>
+
+</OfficeApp>
