@@ -1,3 +1,26 @@
+const msalConfig = {
+  auth: {
+    clientId: "c8e6ef39-1958-45be-8676-534a83405843", // your app ID
+    redirectUri: "https://officialfred.github.io/pa-slidedeck-addin/dist/taskpane.html"
+  }
+};
+
+const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+async function getToken() {
+  try {
+    const loginResponse = await msalInstance.loginPopup({
+      scopes: ["Files.Read", "Sites.Read.All"]
+    });
+
+    return loginResponse.accessToken;
+
+  } catch (err) {
+    console.error("MSAL LOGIN ERROR:", err);
+    throw err;
+  }
+}
+
 /* global document, Office */
 
 console.log("TASKPANE JS LOADED");
@@ -21,7 +44,7 @@ Office.onReady(() => {
 ========================= */
 async function getFileContext() {
   try {
-    const token = await OfficeRuntime.auth.getAccessToken();
+    const token = await getToken();
 
     console.log("TOKEN:", token);
 
@@ -44,7 +67,7 @@ async function getFileContext() {
    FIND EXCEL FILES
 ========================= */
 async function getTargetExcelFiles(pptItemId) {
-  const token = await OfficeRuntime.auth.getAccessToken();
+  const token = await getToken();
 
   const itemRes = await fetch(
     `https://graph.microsoft.com/v1.0/me/drive/items/${pptItemId}`,
@@ -88,7 +111,7 @@ async function getTargetExcelFiles(pptItemId) {
    READ NAMED RANGE
 ========================= */
 async function readNamedRange(fileId, name) {
-  const token = await OfficeRuntime.auth.getAccessToken();
+  const token = await getToken();
 
   const res = await fetch(
     `https://graph.microsoft.com/v1.0/me/drive/items/${fileId}/workbook/names('${name}')/range`,
