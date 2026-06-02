@@ -20,14 +20,24 @@ Office.onReady(() => {
    GET FILE CONTEXT
 ========================= */
 async function getFileContext() {
-  const token = await OfficeRuntime.auth.getAccessToken();
+  try {
+    const token = await OfficeRuntime.auth.getAccessToken();
 
-  const res = await fetch("https://graph.microsoft.com/v1.0/me/drive/recent", {
-    headers: { Authorization: `Bearer ${token}` }
-  });
+    console.log("TOKEN:", token);
 
-  const data = await res.json();
-  return data.value;
+    const res = await fetch("https://graph.microsoft.com/v1.0/me", {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+
+    const data = await res.json();
+    console.log("GRAPH TEST:", data);
+
+    return data;
+
+  } catch (err) {
+    console.error("AUTH ERROR:", err);
+    throw err;
+  }
 }
 
 /* =========================
