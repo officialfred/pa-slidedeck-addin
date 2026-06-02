@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
            xsi:type="TaskPaneApp">
 
   <Id>7bd195c7-46fb-44b2-b7cf-e8992f96a055</Id>
@@ -9,10 +11,9 @@
   <DefaultLocale>en-US</DefaultLocale>
 
   <DisplayName DefaultValue="PA Slide Deck Generator"/>
-  <Description DefaultValue="Simple test add-in."/>
+  <Description DefaultValue="PowerPoint data tool."/>
 
   <IconUrl DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/dist/assets/icon-32.png"/>
-
   <SupportUrl DefaultValue="https://officedocs.microsoft.com"/>
 
   <AppDomains>
@@ -29,4 +30,27 @@
 
   <Permissions>ReadWriteDocument</Permissions>
 
-</OfficeApp>
+  <!-- ✅ REQUIRED FOR COMMANDS + SSO -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+                    xsi:type="VersionOverridesV1_1">
+
+    <Hosts>
+      <Host xsi:type="Presentation">
+
+        <!-- ✅ CORRECT LOCATION FOR SSO -->
+        <WebApplicationInfo>
+          <Id>c8e6ef39-1958-45be-8676-534a83405843</Id>
+          <Resource>api://officialfred.github.io/c8e6ef39-1958-45be-8676-534a83405843</Resource>
+          <Scopes>
+            <Scope>Files.Read</Scope>
+            <Scope>Sites.Read.All</Scope>
+          </Scopes>
+        </WebApplicationInfo>
+
+        <DesktopFormFactor>
+
+          <FunctionFile resid="Commands.Url"/>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+
