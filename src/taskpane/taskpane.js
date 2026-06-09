@@ -77,8 +77,8 @@ Office.onReady(() => {
 // ============================================================
 async function signIn() {
   try {
-    const resp = await msalInstance.loginPopup({ scopes: SCOPES });
-    handleAuthResponse(resp);
+    await msalInstance.loginRedirect({ scopes: SCOPES });
+    // Page will redirect away and come back — handleRedirectPromise() catches the return
   } catch (e) {
     log("Sign-in failed: " + e.message, "err");
   }
@@ -105,19 +105,15 @@ async function acquireToken() {
     accessToken = resp.accessToken;
     log("Token acquired ✓", "ok");
   } catch (e) {
-    // Silent failed, try popup
-    try {
-      const resp = await msalInstance.acquireTokenPopup({ scopes: SCOPES });
-      accessToken = resp.accessToken;
-      log("Token acquired via popup ✓", "ok");
-    } catch (e2) {
-      log("Token acquisition failed: " + e2.message, "err");
-    }
+    // Silent failed, fall back to redirect instead of popup
+    await msalInstance.acquireTokenRedirect({ scopes: SCOPES });
   }
 }
 
 function signOut() {
-  msalInstance.logoutPopup().then(() => {
+  msalInstance.logoutRedirect({
+    postLogoutRedirectUri: window.location.href
+  }).then(() => {
     document.getElementById("sign-in-section").style.display = "block";
     document.getElementById("main-section").style.display = "none";
     document.getElementById("sheets-list").style.display = "none";
