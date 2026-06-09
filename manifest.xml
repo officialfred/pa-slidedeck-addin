@@ -18,7 +18,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/taskpane.html"/>
+    <SourceLocation DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/src/taskpane/taskpane.html"/>
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
@@ -73,7 +73,7 @@
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://github.com/officialfred/pa-slidedeck-addin"/>
         <bt:Url id="Commands.Url" DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/taskpane.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://officialfred.github.io/pa-slidedeck-addin/src/taskpane/taskpane.html"/>
         <bt:Url id="LearnMoreUrl" DefaultValue="https://github.com/officialfred/pa-slidedeck-addin"/>
       </bt:Urls>
       <bt:ShortStrings>
