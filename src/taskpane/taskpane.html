@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Replacer</title>
+  <link rel="stylesheet" href="taskpane.css"/>
+
+  <!-- Office.js -->
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <!-- MSAL for Azure AD auth -->
+  <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Data Replacer</h1>
+    </header>
+
+    <main>
+      <div id="sign-in-section">
+        <p>Sign in with your Microsoft account to access Excel files.</p>
+        <button id="sign-in-btn">Sign In</button>
+      </div>
+
+      <div id="main-section" style="display:none;">
+        <p id="user-info"></p>
+        <button id="find-sheets-btn">🔍 Find Excel Sheets</button>
+
+        <div id="sheets-list" style="display:none;">
+          <h3>Found Excel Files:</h3>
+          <ul id="sheets-ul"></ul>
+          <button id="run-btn">▶ Replace Placeholders</button>
+        </div>
+
+        <div id="log-section">
+          <h3>Log:</h3>
+          <div id="log"></div>
+        </div>
+
+        <button id="sign-out-btn">Sign Out</button>
+      </div>
+    </main>
+  </div>
+  <script src="taskpane.js"></script>
+</body>
+</html>
