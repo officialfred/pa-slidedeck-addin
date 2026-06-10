@@ -10,6 +10,8 @@ const MSAL_CONFIG = {
   cache: { cacheLocation: "sessionStorage" }
 };
 
+import * as msal from "@azure/msal-browser";
+
 // Graph API scopes needed
 const SCOPES = ["Files.Read", "Sites.Read.All"];
 
@@ -54,9 +56,9 @@ let foundExcelFiles = [];
 // INIT
 // ============================================================
 Office.onReady(() => {
+  console.log("hello world)
 
   msalInstance = new msal.PublicClientApplication(MSAL_CONFIG);
-  console.log("hello world)
 
   // Handle redirect response (for redirect flow)
   msalInstance.handleRedirectPromise().then(handleAuthResponse).catch(e => log(e, "err"));
