@@ -54,7 +54,9 @@ let foundExcelFiles = [];
 // INIT
 // ============================================================
 Office.onReady(() => {
+
   msalInstance = new msal.PublicClientApplication(MSAL_CONFIG);
+  console.log("hello world)
 
   // Handle redirect response (for redirect flow)
   msalInstance.handleRedirectPromise().then(handleAuthResponse).catch(e => log(e, "err"));
